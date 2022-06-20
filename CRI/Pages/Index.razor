@@ -1,0 +1,24 @@
+﻿@page "/"
+
+<section class="landing">
+    <div class="form">
+        <div class="form-img">
+            <img src="img/Logo.png" alt="logo cloud" />
+        </div>
+        <div class="form-input">
+                <div class="--input-search">
+                     <input type="text"   @bind-value="RepositoryName" placeholder="MeatRocket/CRI-testing"> </input>
+                     <button><em class="fa-solid fa-magnifying-glass"></em></button>
+                </div>
+                <div class="form-button">
+                    <button class="--btn-primary" @onclick="TestAsync"> Search </button>
+                </div>
+        </div>
+    </div>
+   
+</section>
+
+
+@code{
+    
+}

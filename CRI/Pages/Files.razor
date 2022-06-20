@@ -1,0 +1,37 @@
+﻿@page "/{name}/{project}"
+<h3>Files</h3>
+
+ @if(ActiveCRI.Files !=null)
+    {
+        <div>
+            <h3>Files:</h3>
+            <ul>
+                @foreach (CRIFile file in ActiveCRI.Files)
+                {
+                 <li>
+                    <a  onclick="@(async () => await FillCRIContent(@file.Path))" href="/">
+                    @file.Label: @file.Path
+                    </a>  
+                </li>   
+                }
+
+    </ul>
+</div>   
+    }
+
+    <div>
+    @if (ActiveFile != null)
+    {
+        @if (ActiveFile.Content == null)
+        {
+            <p>loading content...</p>
+        }
+        else
+        {
+            @HTMLcontents
+            @*<Markdown text=@convertedMarkdown //To take Parameter Input />*@
+            
+        }
+    }
+</div>
+    
